@@ -1,5 +1,10 @@
 {
-    "java.project.sourcePaths": [],
+    "java.project.sourcePaths": [
+        "src\\entidades",
+        "src\\persistencia",
+        "src\\apresentacao",
+        "src\\negocio"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": []
 }
