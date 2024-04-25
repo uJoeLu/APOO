@@ -4,6 +4,13 @@ public class Cliente {
     private int idade;
     private String  email;
 
+    public  Cliente(String n, String c ,int i, String e){
+        this.nome = n;
+        this.cpf=c;
+        this.idade =i;
+        this.email = e;
+    }
+
     public String getNome() {
         return nome;
     }
