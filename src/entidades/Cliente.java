@@ -24,5 +24,11 @@ public class Cliente {
            this.idade = idade;
        else System.out.println("Erro! Idade não pode ser negativa ou zero.");
     }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
     
 }
