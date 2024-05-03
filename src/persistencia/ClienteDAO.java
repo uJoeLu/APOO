@@ -1,7 +1,12 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO implements IClienteDAO {
     private List<Cliente> listaDeClientes;
+    
+    public ClienteDAO(){
+        this.listaDeClientes = new ArrayList<>();
+    }
 
     @Override
     public void alterarDadosDoCliente(Cliente clienteAlterado) {

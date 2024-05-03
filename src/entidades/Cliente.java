@@ -11,6 +11,9 @@ public class Cliente {
         this.idade =i;
         this.email = e;
     }
+    public Cliente(){
+        
+    }
 
     public String getNome() {
         return nome;

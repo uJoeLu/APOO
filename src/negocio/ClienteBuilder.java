@@ -17,6 +17,10 @@ public class ClienteBuilder {
         this.cliente.setIdade(idade);
         return this;
         }
+    public ClienteBuilder setEmail(String email){
+        this.cliente.setEmail(email);
+        return this;
+    }
     
     public Cliente build() {
         return cliente;
