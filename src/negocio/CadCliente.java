@@ -3,10 +3,10 @@ import java.util.List;
 public class CadCliente {
     
     private static CadCliente instancia;
-    private ClienteDAO clienteDAO;
+    private IClienteDAO clienteDAO;
 
     private CadCliente(){
-        clienteDAO = new ClienteDAOImpl();
+        clienteDAO = new ClienteDAO();
     }
     public static CadCliente getInstacia(){
         if(instancia == null){
@@ -22,8 +22,8 @@ public class CadCliente {
             throw new Exception("Erro ao cadastrar o cliente: "+e.getMessage());
         }  
     }
-    public List<Cliente> listagemDeClientes() throws ClassNotFoundException{
-         return clienteDAO.listagemDeClientes();  
+    public List<Cliente> getListaDeClientes() throws ClassNotFoundException{
+         return clienteDAO.getListaDeClientes();  
     } 
     public void alterarDadosDoCliente(String nome, String cpf ,int idade, String email)throws Exception{
        Cliente clienteAlterado = new Cliente(nome, cpf, idade, email);

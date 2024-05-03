@@ -1,3 +1,4 @@
+
 public class Cliente {
     private String nome;
     private String  cpf;
@@ -37,5 +38,6 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+
     
 }
