@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ClienteDAO implements IClienteDAO {
     private List<Cliente> listaDeClientes;
-    
+
     public ClienteDAO(){
         this.listaDeClientes = new ArrayList<>();
     }
@@ -23,6 +23,7 @@ public class ClienteDAO implements IClienteDAO {
     @Override
     public void cadastrarCliente(Cliente cliente) {
         listaDeClientes.add(cliente);
+        System.out.println("Clinete cadastrado com sucesso!");
 
     }
 
