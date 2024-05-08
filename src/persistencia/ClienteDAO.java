@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteDAO implements IClienteDAO {
-    private List<Cliente> listaDeClientes;
+public class ClienteDAO<T extends Cliente> implements IClienteDAO<T> {
+    private List<T> listaDeClientes;
 
-    public ClienteDAO(){
+    public ClienteDAO() {
         this.listaDeClientes = new ArrayList<>();
     }
 
     @Override
-    public void alterarDadosDoCliente(Cliente clienteAlterado) {
+    public void alterarDadosDoCliente(T clienteAlterado) {
         // ALTERAR DADOS DO CLIENTE ATRAVEIS DO CPF CADASTRADO
-        for (Cliente cliente : getListaDeClientes()) {
+        for (T cliente : getListaDeClientes()) {
             if (cliente.getCpf().equalsIgnoreCase(clienteAlterado.getCpf())) {
                 int indice = listaDeClientes.indexOf(cliente);
                 listaDeClientes.set(indice, clienteAlterado);
@@ -21,15 +21,14 @@ public class ClienteDAO implements IClienteDAO {
     }
 
     @Override
-    public void cadastrarCliente(Cliente cliente) {
+    public void cadastrarCliente(T cliente) {
         listaDeClientes.add(cliente);
-        System.out.println("Clinete cadastrado com sucesso!");
-
+        System.out.println("Cliente cadastrado com sucesso!");
     }
 
     @Override
     public void excluirCliente(String cpf) {
-        for (Cliente cliente : getListaDeClientes()) {
+        for (T cliente : getListaDeClientes()) {
             if (cliente.getCpf().equalsIgnoreCase(cpf)) {
                 int indice = listaDeClientes.indexOf(cliente);
                 listaDeClientes.remove(indice);
@@ -39,8 +38,7 @@ public class ClienteDAO implements IClienteDAO {
     }
 
     @Override
-    public List<Cliente> getListaDeClientes() {
+    public List<T> getListaDeClientes() {
         return listaDeClientes;
     }
-
 }

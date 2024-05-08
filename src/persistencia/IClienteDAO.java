@@ -1,13 +1,13 @@
 import java.util.List;
 
-public interface IClienteDAO {
+public interface IClienteDAO<T> {
 
-    public void cadastrarCliente(Cliente cliente);
+    public void cadastrarCliente(T cliente);
 
-    public List<Cliente> getListaDeClientes();
+    public List<T> getListaDeClientes();
 
     public void excluirCliente(String cpf);
 
-    public void alterarDadosDoCliente(Cliente clienteAlterado);
+    public void alterarDadosDoCliente(T clienteAlterado);
 
 }
