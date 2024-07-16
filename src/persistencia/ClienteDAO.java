@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClienteDAO<T extends Cliente> implements IClienteDAO<T> {
     private List<T> listaDeClientes;
@@ -39,10 +40,9 @@ public class ClienteDAO<T extends Cliente> implements IClienteDAO<T> {
 
     @Override
     public List<T> getListaDeClientes() {
-        if(getListaDeClientes() != null){
-            return listaDeClientes;
-        }else{
-            return null;
-        }
+
+        return listaDeClientes.stream()
+                .sorted((c1, c2) -> c1.getNome().compareTo(c2.getNome()))
+                .collect(Collectors.toList());
     }
 }
