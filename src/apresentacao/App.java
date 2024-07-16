@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -7,7 +9,13 @@ public class App {
             .setIdade(27)
             .setEmail("joelneves@gmail.com")
             .build();
-             CadCliente cadCliente = CadCliente.getInstacia();
+             CadCliente<Cliente> cadCliente = CadCliente.getInstancia();
              cadCliente.cadastrarCliente(cliente);
+
+    // Imprima os clientes
+    for (Cliente cliente1 : cadCliente.getListaDeClientes()) {
+        System.out.println(cliente1.getNome());
+    }
+
     }
 }

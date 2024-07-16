@@ -39,6 +39,10 @@ public class ClienteDAO<T extends Cliente> implements IClienteDAO<T> {
 
     @Override
     public List<T> getListaDeClientes() {
-        return listaDeClientes;
+        if(getListaDeClientes() != null){
+            return listaDeClientes;
+        }else{
+            return null;
+        }
     }
 }
