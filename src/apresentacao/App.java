@@ -10,7 +10,6 @@ public class App {
              CadCliente<Cliente> cadCliente = CadCliente.getInstancia();
              cadCliente.cadastrarCliente(cliente);
 
-    // Imprima os clientes
     for (Cliente cliente1 : cadCliente.getListaDeClientes()) {
         System.out.println(cliente1.getNome());
     }
