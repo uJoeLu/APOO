@@ -10,8 +10,17 @@ public class App {
              CadCliente<Cliente> cadCliente = CadCliente.getInstancia();
              cadCliente.cadastrarCliente(cliente);
 
-    for (Cliente cliente1 : cadCliente.getListaDeClientes()) {
-        System.out.println(cliente1.getNome());
+             Cliente cliente2 = new ClienteBuilder()
+             .setNome("Marcos Gomes")
+             .setCpf("123456789")
+             .setIdade(29)
+             .setEmail("marcosgomes@gmail.com")
+             .build();
+              CadCliente<Cliente> cadClientes = CadCliente.getInstancia();
+              cadClientes.cadastrarCliente(cliente2);
+
+    for (Cliente clientes : cadCliente.getListaDeClientes()) {
+        System.out.println("NOME: " +clientes.getNome()+ " \nCPF: " +clientes.getCpf()+ "\nIDADE: " + clientes.getIdade()+ "\nEMAIL: " + clientes.getEmail());
     }
 
     }
