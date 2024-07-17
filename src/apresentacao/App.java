@@ -29,7 +29,7 @@ public class App {
               cadClientes.cadastrarCliente(cliente2);
 
     for (Cliente clientes : cadCliente.getListaDeClientes()) {
-        System.out.println("NOME: " +clientes.getNome()+ " \nCPF: " +clientes.getCpf()+ "\nIDADE: " + clientes.getIdade()+ "\nEMAIL: " + clientes.getEmail());
+        System.out.println("\nNOME: " +clientes.getNome()+ " \nCPF: " +clientes.getCpf()+ "\nIDADE: " + clientes.getIdade()+ "\nEMAIL: " + clientes.getEmail());
     }
 
     }
